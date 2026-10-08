@@ -17,7 +17,7 @@ const SecondScreen = ({ navigation }) => {
   return (
     <Layout>
       <TopNav
-        middleContent="SecondScreen"
+        middleContent="Explore"
         rightContent={
           <Ionicons
             name={isDarkmode ? "sunny" : "moon"}
@@ -26,24 +26,21 @@ const SecondScreen = ({ navigation }) => {
           />
         }
         rightAction={() => {
-            if(isDarkmode) {
-                setTheme("light");
-            } else {
-                setTheme("dark");
-            }
+          setTheme(isDarkmode ? "light" : "dark");
         }}
       />
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Section>
           <SectionContent>
             <Text fontWeight="bold" style={{ textAlign: "bold" }}>
-              These Contents are from rapi ui
+              Choose a section
             </Text>
             <Button
               style={{ marginTop: 10 }}
-              text="Go To Home Screen"
-              onPress={() => navigation.navigate("Home")}
+              text="Home"
+              onPress={() => navigation.navigate("MainTabs")}
             />
+            
           </SectionContent>
         </Section>
       </View>
